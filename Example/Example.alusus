@@ -1,0 +1,15 @@
+import "hijri.alusus";
+
+ 
+    func testGregorianToHijri {
+       def data: Umalqurra.Date = Umalqurra.gegorean_to_hijri(2021, 11, 1);
+       Console.print("%d-%d-%d\n", data.year, data.month, data.day); // should print 1443-3-26
+}
+testGregorianToHijri();
+
+    func testHijriToGregorian {
+        def data: Umalqurra.Date = Umalqurra.hijri_to_gregorian(1443, 3, 26);
+        Console.print("%d-%d-%d\n", data.year, data.month, data.day); // should print 2021-11-1
+}
+testHijriToGregorian();
+
