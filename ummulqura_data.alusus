@@ -1,9 +1,5 @@
-import "hijri_data.alusus";
-
-
-عرف  مـصفوفة_ام_القرى: لقب  UmalqurraArray؛ 
-وحدة مـصفوفة{
-عرف بيانات_ام_القرى: مـصفوفة[صحيح]({
+@merge module Hijri {
+    def ummulquraData: Array[int]({
         28607, 28636, 28665, 28695, 28724, 28754, 28783, 28813, 28843, 28872, 28901, 28931, 28960, 28990,
         29019, 29049, 29078, 29108, 29137, 29167,
         29196, 29226, 29255, 29285, 29315, 29345, 29375, 29404, 29434, 29463, 29492, 29522, 29551, 29580,
@@ -180,4 +176,13 @@ import "hijri_data.alusus";
         79812, 79841, 79871, 79900, 79930, 79960,
         7999
     });
-            عرف هات_المدخل: لقب get_index؛             
+
+    func getDataIndex (mcjdn:int):int{
+        def index: Int;
+        for index = 0 , index < ummulquraData.getLength(), index++{
+            if ummulquraData(index) > mcjdn return index
+        }
+        return 0         
+    }
+}
+

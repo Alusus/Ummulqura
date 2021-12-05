@@ -1,0 +1,17 @@
+import "Srl/Console";
+import "Apm";
+Apm.importFile("Alusus/Ummulqura", "Hijri.alusus");
+use Srl;
+
+func testGregorianToHijri {
+    def data: Hijri.Date = Hijri.convertToHijri(2021, 11, 1);
+    Console.print("%d-%d-%d\n", data.year, data.month, data.day); // should print 1443-3-26
+}
+testGregorianToHijri();
+
+func testHijriToGregorian {
+    def data: Hijri.Date = Hijri.convertToGregorian(1443, 3, 26);
+    Console.print("%d-%d-%d\n", data.year, data.month, data.day); // should print 2021-11-1
+}
+testHijriToGregorian();
+

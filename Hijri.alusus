@@ -1,28 +1,26 @@
 import "Srl/Console";
 import "Srl/Array";
 import "Srl/Math";
-import "hijri.alusus";
-import "hijri_data.alusus";
-use Srl;
+import "ummulqura_data.alusus";
 
-module Umalqurra {
+@merge module Hijri {
+    use Srl;
+
     class Date {
         def year: int;
         def month: int;
         def day: int;
         def monthLen: int;
         
-        handler this~init() {
-        }
+        handler this~init() {}
 
-     handler this~init(year:int, month:int, day:int, monthLen: int) {
-        
+        handler this~init(year:int, month:int, day:int, monthLen: int) {
             this.year = year;
             this.month = month;
             this.day = day;
             this.monthLen = monthLen;
         }
-        
+
         handler this~init(that:ref[Date]) {
             this.year = that.year;
             this.month = that.month;
@@ -36,9 +34,9 @@ module Umalqurra {
             this.day = that.day;
             this.monthLen = that.monthLen;
         }
-    } 
+    }
 
-  func gegorean_to_hijri(year:int, month:int, day:int): Date {
+    func convertToHijri(year:int, month:int, day:int): Date {
         def m: int = month;
         def y: int = year;
      
@@ -54,31 +52,31 @@ module Umalqurra {
         // compute Modified Chronological Julian Day Number (MCJDN)
         def mcjdn: int = cjdn - 2400000;
         // the MCJDN's of the start of the lunations in the Umm al-Qura calendar are stored in 'islamcalendar_dat.js'
-        def index: int = UmalqurraArray.get_index(mcjdn)
+        def index: int = getDataIndex(mcjdn)
         // compute and output the Umm al-Qura calendar date
         def iln: int = index + 16260;
         def ii: int = (iln - 1) / 12;
         def iy: int = ii + 1;
         def im: int = iln - 12 * ii;
-        def id: int = mcjdn - UmalqurraArray.ummalqura_dat(index - 1) + 1;
-        def ml: int = UmalqurraArray.ummalqura_dat(index) - UmalqurraArray.ummalqura_dat(index - 1);
+        def id: int = mcjdn - ummulquraData(index - 1) + 1;
+        def ml: int = ummulquraData(index) - ummulquraData(index - 1);
         return Date(iy, im, id, ml);
-     }
+    }
 
-    func hijri_to_gregorian(year:int, month:int, day:int): Date {
+    func convertToGregorian(year:int, month:int, day:int): Date {
         def iyear: int = year;
         def imonth: int = month;
         def iday: int = day;
         def ii: int = iyear - 1;
         def iindex: int = (ii * 12) + 1 + (imonth -1);
         def i: int = iindex -16260;
-        def mcjdn: int = iday + UmalqurraArray.ummalqura_dat(i - 1) - 1;
+        def mcjdn: int = iday + ummulquraData(i - 1) - 1;
         def cjdn: int = mcjdn + 2400000;
 
-        return julian_to_gregorian(cjdn);
+        return convertJulianToGregorian(cjdn);
     }
 
-    func julian_to_gregorian(julianDate:int): Date {
+    func convertJulianToGregorian(julianDate:int): Date {
         def z: int = julianDate + 0.5;
         def a: int = (z - 1867216.25) / 36524.25;
         a = z + 1 + a - (a / 4)~cast[int];
