@@ -41,7 +41,7 @@ import "ummulqura_data.alusus";
         def y: int = year;
      
         if month < 3 {
-            day -= 1;
+            y -= 1;
             m += 12;
         }
         def a: int = y / 100;
@@ -69,7 +69,7 @@ import "ummulqura_data.alusus";
         def iday: int = day;
         def ii: int = iyear - 1;
         def iindex: int = (ii * 12) + 1 + (imonth -1);
-        def i: int = iindex -16260;
+        def i: int = iindex - 16260;
         def mcjdn: int = iday + ummulquraData(i - 1) - 1;
         def cjdn: int = mcjdn + 2400000;
 
