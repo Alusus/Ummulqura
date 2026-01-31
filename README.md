@@ -91,3 +91,11 @@ This functions convert a date from Hijri format to Gregorian format.
 `day` the number of the day, starting from 1.
 
 Returns the date in Gregorian format.
+
+---
+
+## License
+
+This project is licensed under the GNU Lesser General Public License v3.0 (LGPL-3.0). See the `COPYING` and `COPYING.LESSER` files for details.
+
+
