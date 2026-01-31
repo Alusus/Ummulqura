@@ -1,5 +1,5 @@
 # Ummulqura
-[[عربي]](readme.ar.md)
+[[عربي]](README.ar.md)
 
 Alusus library for converting dates to and from Hijri using the algorithm of Ummulqura Calendar.
 

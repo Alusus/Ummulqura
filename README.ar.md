@@ -1,5 +1,5 @@
 # Ummulqura
-[[English]](readme.md)
+[[English]](README.md)
 
 تتضمن هذه المكتبة دوال للتحويل بين التاريخين الهجري والميلادي.
 
