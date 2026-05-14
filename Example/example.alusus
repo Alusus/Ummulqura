@@ -1,6 +1,6 @@
 import "Srl/Console";
 import "Apm";
-Apm.importFile("Alusus/Ummulqura", "Hijri.alusus");
+Apm.importPackage("Alusus/Ummulqura@0.1", "Hijri.alusus");
 use Srl;
 
 func testGregorianToHijri {

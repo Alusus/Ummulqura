@@ -10,7 +10,7 @@
 ```
 اشمل "مـتم/طـرفية"؛
 اشمل "مـحا"؛
-مـحا.اشمل_ملف("Alusus/Ummulqura"، "هـجري.أسس")؛
+مـحا.اشمل_حزمة("Alusus/Ummulqura@0.1"، "هـجري.أسس")؛
 ```
 
 </div>
@@ -18,7 +18,7 @@
 ```
 import "Srl/Console";
 import "Apm";
-Apm.importFile("Alusus/Ummulqura", "Hijri.alusus");
+Apm.importPackage("Alusus/Ummulqura@0.1", "Hijri.alusus");
 ```
 
 ## مثال
@@ -28,7 +28,7 @@ Apm.importFile("Alusus/Ummulqura", "Hijri.alusus");
 ```
 اشمل "مـتم/طـرفية"؛
 اشمل "مـحا"؛
-مـحا.اشمل_ملف("Alusus/Ummulqura"، "هـجري.أسس")؛
+مـحا.اشمل_حزمة("Alusus/Ummulqura@0.1"، "هـجري.أسس")؛
 
 استخدم مـتم؛
 
@@ -56,7 +56,7 @@ Apm.importFile("Alusus/Ummulqura", "Hijri.alusus");
 ```
 import "Srl/Console";
 import "Apm";
-Apm.importFile("Alusus/Ummulqura", "Hijri.alusus");
+Apm.importPackage("Alusus/Ummulqura@0.1", "Hijri.alusus");
 
 use Srl;
 
@@ -166,4 +166,6 @@ func convertToGregorian(year:int, month:int, day:int): Date;
 ## الرخصة
 
 هذا المشروع مرخص بموجب رخصة غنو العمومية الصغرى الإصدار 3.0 (LGPL-3.0). راجع ملفات `COPYING` و `COPYING.LESSER` للحصول على التفاصيل.
+
+
 

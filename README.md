@@ -8,7 +8,7 @@ You can add it to the project using the following statements:
 ```
 import "Srl/Console";
 import "Apm";
-Apm.importFile("Alusus/Ummulqura", "Hijri.alusus");
+Apm.importPackage("Alusus/Ummulqura@0.1", "Hijri.alusus");
 ```
 
 ## Example
@@ -16,7 +16,7 @@ Apm.importFile("Alusus/Ummulqura", "Hijri.alusus");
 ```
 import "Srl/Console";
 import "Apm";
-Apm.importFile("Alusus/Ummulqura", "Hijri.alusus");
+Apm.importPackage("Alusus/Ummulqura@0.1", "Hijri.alusus");
 
 use Srl;
 
@@ -97,5 +97,6 @@ Returns the date in Gregorian format.
 ## License
 
 This project is licensed under the GNU Lesser General Public License v3.0 (LGPL-3.0). See the `COPYING` and `COPYING.LESSER` files for details.
+
 
 
