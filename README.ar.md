@@ -1,11 +1,13 @@
 # Ummulqura
 [[English]](README.md)
 
-تتضمن هذه المكتبة دوال للتحويل بين التاريخين الهجري والميلادي.
+<div dir=rtl>
+
+مكتبة أسس للتحويل بين التاريخين الميلادي والهجري باستخدام خوارزمية تقويم أم القرى.
 
 ## إضافة المكتبة للمشروع
 
-<div dir=rtl>
+يمكن إضافتها للمشروع باستخدام الجمل التالية:
 
 ```
 اشمل "مـتم/طـرفية"؛
@@ -13,7 +15,7 @@
 مـحا.اشمل_حزمة("Alusus/Ummulqura@0.1"، "هـجري.أسس")؛
 ```
 
-</div>
+<div dir=ltr>
 
 ```
 import "Srl/Console";
@@ -21,9 +23,9 @@ import "Apm";
 Apm.importPackage("Alusus/Ummulqura@0.1", "Hijri.alusus");
 ```
 
-## مثال
+</div>
 
-<div dir=rtl>
+## مثال
 
 ```
 اشمل "مـتم/طـرفية"؛
@@ -51,7 +53,7 @@ Apm.importPackage("Alusus/Ummulqura@0.1", "Hijri.alusus");
 اختبر_من_هجري_إلى_ميلادي()؛
 ```
 
-</div>
+<div dir=ltr>
 
 ```
 import "Srl/Console";
@@ -60,30 +62,28 @@ Apm.importPackage("Alusus/Ummulqura@0.1", "Hijri.alusus");
 
 use Srl;
 
-// دالة لاختبار التحويل من التاريخ الميلادي إلى الهجري
+// a function to test the conversion from Gregorian to Hijri.
 func testGregorianToHijri {
-    // نقوم بتعريف متغير من نمط تاريخ
-    // هذا المتغير سيحمل قيمة التحويل للتاريخ الميلادي
+    // define a variable to hold a date in Gregorian format.
     def data: Hijri.Date = Hijri.convertToHijri(2021, 11, 1);
     Console.print("%d-%d-%d\n", data.year, data.month, data.day); // should print 1443-3-26
 }
 testGregorianToHijri();
 
-// دالة لاختبار التحويل من التاريخ الهجري إلى الميلادي
+// a function to test the conversion from Hijri to Gregorian.
 func testHijriToGregorian {
-    // نقوم بتعريف متغير من نمط تاريخ
-    // هذا المتغير سيحمل قيمة التحويل للتاريخ الهجري
+    // define a variable to hold a date in Hijri format.
     def data: Hijri.Date = Hijri.convertToGregorian(1443, 3, 26);
     Console.print("%d-%d-%d\n", data.year, data.month, data.day); // should print 2021-11-1
 }
 testHijriToGregorian();
 ```
 
+</div>
+
 ## الأصناف والدوال
 
 ### تـاريخ (Date)
-
-<div dir=rtl>
 
 ```
 صنف تـاريخ {
@@ -94,7 +94,7 @@ testHijriToGregorian();
 }
 ```
 
-</div>
+<div dir=ltr>
 
 ```
 class Date {
@@ -105,59 +105,115 @@ class Date {
 }
 ```
 
-`السنة` (`year`) رقم السنة.
+</div>
 
-`الشهر` (`month`) رقم الشهر، بدءاً من 1.
+يمثل هذا النوع تاريخًا، سواء بالميلادي أو الهجري.
 
-`اليوم` (`day`) رقم اليوم، بدءاً من 1.
-
-`طول_الشهر` (`monthLen`) عدد أيام الشهر المشار له بـ`الشهر`.
-
-### حول_لهجري (convertToHijri)
-
-<div dir=rtl>
+#### السنة (year)
 
 ```
-عرف حول_لهجري(سنة: صـحيح، شهر: صـحيح، يوم: صـحيح): تـاريخ؛
+عرف السنة: صـحيح؛
+```
+
+<div dir=ltr>
+
+```
+def year: int;
 ```
 
 </div>
+
+رقم السنة.
+
+#### الشهر (month)
+
+```
+عرف الشهر: صـحيح؛
+```
+
+<div dir=ltr>
+
+```
+def month: int;
+```
+
+</div>
+
+رقم الشهر، بدءاً من 1.
+
+#### اليوم (day)
+
+```
+عرف اليوم: صـحيح؛
+```
+
+<div dir=ltr>
+
+```
+def day: int;
+```
+
+</div>
+
+رقم اليوم، بدءاً من 1.
+
+#### طول_الشهر (monthLen)
+
+```
+عرف طول_الشهر: صـحيح؛
+```
+
+<div dir=ltr>
+
+```
+def monthLen: int;
+```
+
+</div>
+
+عدد أيام الشهر المشار له بـ`الشهر`.
+
+### حول_لهجري (convertToHijri)
+
+```
+دالة حول_لهجري(سنة: صـحيح، شهر: صـحيح، يوم: صـحيح): تـاريخ؛
+```
+
+<div dir=ltr>
 
 ```
 func convertToHijri(year:int, month:int, day:int): Date;
 ```
 
+</div>
+
 تقوم هذه الدالة بتحويل تاريخ ميلادي معطى إلى تاريخ هجري.
 
-`سنة` (`year`) رقم السنة.
-
-`شهر` (`month`) رقم الشهر، بدءاً من 1.
-
-`يوم` (`day`) رقم اليوم، بدءاً من 1.
+* `سنة` (`year`): رقم السنة.
+* `شهر` (`month`): رقم الشهر، بدءاً من 1.
+* `يوم` (`day`): رقم اليوم، بدءاً من 1.
 
 تعيد هذه الدالة نفس التاريخ ولكن بالهجري.
 
 ### حول_لميلادي (convertToGregorian)
 
-<div dir=rtl>
-
 ```
-عرف حول_لميلادي(سنة: صـحيح، شهر: صـحيح، يوم: صـحيح): تـاريخ؛
+دالة حول_لميلادي(سنة: صـحيح، شهر: صـحيح، يوم: صـحيح): تـاريخ؛
 ```
 
-</div>
+<div dir=ltr>
 
 ```
 func convertToGregorian(year:int, month:int, day:int): Date;
 ```
 
+</div>
+
 تقوم هذه الدالة بتحويل تاريخ هجري معطى إلى تاريخ ميلادي.
 
-`سنة` (`year`) رقم السنة.
-
-`شهر` (`month`) رقم الشهر، بدءاً من 1.
-
-`يوم` (`day`) رقم اليوم، بدءاً من 1.
+* `سنة` (`year`): رقم السنة.
+* `شهر` (`month`): رقم الشهر، بدءاً من 1.
+* `يوم` (`day`): رقم اليوم، بدءاً من 1.
 
 تعيد هذه الدالة نفس التاريخ ولكن بالميلادي.
 
@@ -167,5 +223,4 @@ func convertToGregorian(year:int, month:int, day:int): Date;
 
 هذا المشروع مرخص بموجب رخصة غنو العمومية الصغرى الإصدار 3.0 (LGPL-3.0). راجع ملفات `COPYING` و `COPYING.LESSER` للحصول على التفاصيل.
 
-
-
+</div>

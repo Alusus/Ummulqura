@@ -39,7 +39,7 @@ testHijriToGregorian();
 
 ## Functions and Types
 
-### Type
+### Date
 
 ```
 class Date {
@@ -52,13 +52,30 @@ class Date {
 
 This type represent the date, whether in Gregorian or Hijri.
 
-`year` the number of the year.
+#### year 
 
-`month` the number of the month, starting from 1.
+```
+def year: int;
+```
+the number of the year.
+#### month
 
-`day` the number of the day, starting from 1.
+```
+def month: int;
+```
+the number of the month, starting from 1.
+#### day 
 
-`monthLen` the number of days in the month referred to by `month`.
+```
+def day: int;
+```
+he number of the day, starting from 1.
+#### monthLen
+
+```
+def monthLen: int;
+```
+the number of days in the month referred to by `month`.
 
 ### convertToHijri
 
@@ -68,11 +85,9 @@ func convertToHijri(year:int, month:int, day:int): Date;
 
 This functions convert a date from Gregorian format to Hijri format.
 
-`year` the number of the year.
-
-`month` the number of the month, starting from 1.
-
-`day` the number of the day, starting from 1.
+* `year` the number of the year.
+* `month` the number of the month, starting from 1.
+* `day` the number of the day, starting from 1.
 
 Returns the date in Hijri format.
 
@@ -84,11 +99,9 @@ func convertToGregorian(year:int, month:int, day:int): Date;
 
 This functions convert a date from Hijri format to Gregorian format.
 
-`year` the number of the year.
-
-`month` the number of the month, starting from 1.
-
-`day` the number of the day, starting from 1.
+* `year` the number of the year.
+* `month` the number of the month, starting from 1.
+* `day` the number of the day, starting from 1.
 
 Returns the date in Gregorian format.
 
