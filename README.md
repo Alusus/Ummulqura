@@ -1,9 +1,11 @@
 # Ummulqura
+
 [[عربي]](README.ar.md)
 
 Alusus library for converting dates to and from Hijri using the algorithm of Ummulqura Calendar.
 
 ## Adding to the Project
+
 You can add it to the project using the following statements:
 ```
 import "Srl/Console";
@@ -58,18 +60,21 @@ This type represent the date, whether in Gregorian or Hijri.
 def year: int;
 ```
 the number of the year.
+
 #### month
 
 ```
 def month: int;
 ```
 the number of the month, starting from 1.
+
 #### day 
 
 ```
 def day: int;
 ```
 he number of the day, starting from 1.
+
 #### monthLen
 
 ```
@@ -105,11 +110,6 @@ This functions convert a date from Hijri format to Gregorian format.
 
 Returns the date in Gregorian format.
 
----
-
 ## License
 
 This project is licensed under the GNU Lesser General Public License v3.0 (LGPL-3.0). See the `COPYING` and `COPYING.LESSER` files for details.
-
-
-

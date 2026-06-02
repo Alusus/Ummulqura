@@ -1,7 +1,8 @@
 # Ummulqura
-[[English]](README.md)
 
 <div dir=rtl>
+
+[[English]](README.md)
 
 مكتبة أسس للتحويل بين التاريخين الميلادي والهجري باستخدام خوارزمية تقويم أم القرى.
 
@@ -216,8 +217,6 @@ func convertToGregorian(year:int, month:int, day:int): Date;
 * `يوم` (`day`): رقم اليوم، بدءاً من 1.
 
 تعيد هذه الدالة نفس التاريخ ولكن بالميلادي.
-
----
 
 ## الرخصة
 
